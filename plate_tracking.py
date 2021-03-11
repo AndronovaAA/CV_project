@@ -1,5 +1,5 @@
-from plate_detect import *
-from IFrame import *
+from core.plate_detect import *
+from core.IFrame import *
 import math as math
 
 boxes_distance_threshold = 10
