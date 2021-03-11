@@ -6,7 +6,7 @@ import tensorflow as tf
 import pytesseract
 from core.config import cfg
 import re
-from FramesStorage import *
+from core.plate_tracking import *
 
 # function to recognize license plate numbers using Tesseract OCR
 def recognize_plate(img, coords,plate_pred,car_id):
