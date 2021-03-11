@@ -40,7 +40,7 @@ flags.DEFINE_boolean('plate', False, 'perform license plate recognition')
 def main(_argv):
 
     frameStorage=FramesStorage()
-    plate_pred = [[],[],[],[],[],[],[],[],[],[],[],[]]
+    plate_pred = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
     config = ConfigProto()
     config.gpu_options.allow_growth = True
@@ -126,8 +126,8 @@ def main(_argv):
           frameStorage.ClearLongTimeUndetectableCars(timestamp)
           car_id = frameStorage.GetCarId(timestamp, [x_b, y_b, w_b, h_b], 1)
 
-          cv2.rectangle(frame, (x_b, y_b), (x_b + int(w_b), y_b + int(h_b)), (52, 64, 235), 1)
-          cv2.putText(frame, f"Id: {car_id}", (x_b, y_b - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (20, 20, 235), 2)
+          #cv2.rectangle(frame, (x_b, y_b), (x_b + int(w_b), y_b + int(h_b)), (52, 64, 235), 1)
+          #cv2.putText(frame, f"Id: {car_id}", (x_b, y_b - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (20, 20, 235), 2)
 
         x, y, w, h = b_box[0], b_box[1], b_box[2], b_box[3]
         
