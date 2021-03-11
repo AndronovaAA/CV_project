@@ -1,4 +1,4 @@
-from core.plate_detect import *
+from core.frame_detect import *
 from core.IFrame import *
 import math as math
 
