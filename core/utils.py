@@ -86,7 +86,7 @@ def recognize_plate(img, coords,plate_pred,car_id):
      
       plate_pred[car_id].append(plate_num)
       print("License Plate Tesseract #: ", plate_num)
-      print(plate_pred[car_id])
+      # print(plate_pred[car_id])
       for plate in plate_pred[car_id]:
         if len(plate) > 9: 
           leng = 9
@@ -259,7 +259,7 @@ def draw_bbox(image, bboxes,timestamp,frameStorage,plate_pred, info = False, cou
                 if len(plate_number) != 0:
                   
                   cv2.putText(image, plate_number, (int(coor[0]), int(coor[1]-height_ratio)), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255,255,0), 1)
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,0), 2)
 
             bbox_color = colors[class_ind]
             bbox_thick = int(0.6 * (image_h + image_w) / 600)
@@ -271,7 +271,7 @@ def draw_bbox(image, bboxes,timestamp,frameStorage,plate_pred, info = False, cou
                 print("Object found: {}, Confidence: {:.2f}, BBox Coords (xmin, ymin, xmax, ymax): {}, {}, {}, {} ".format(class_name, score, coor[0], coor[1], coor[2], coor[3]))
 
             if show_label:
-                bbox_mess = '%s: %.2f : %.2f' % (class_name, score,car_id)
+                bbox_mess = '%s: %.2f Id: %d' % (class_name, score,car_id)
                 t_size = cv2.getTextSize(bbox_mess, 0, fontScale, thickness=bbox_thick // 2)[0]
                 c3 = (c1[0] + t_size[0], c1[1] - t_size[1] - 3)
                 cv2.rectangle(image, c1, (np.float32(c3[0]), np.float32(c3[1])), bbox_color, -1) #filled
