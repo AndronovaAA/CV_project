@@ -1,4 +1,4 @@
-from DetectedCar import *
+from plate_detect import *
 from IFrame import *
 import math as math
 
