@@ -1,5 +1,5 @@
 from DetectedCar import *
-from CarFrame import *
+from IFrame import *
 import math as math
 
 boxes_distance_threshold = 10
